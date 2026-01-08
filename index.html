@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredio | Culinary Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="logo-wrapper">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="4" fill="#0F172A"/>
+                <path d="M12 20H28" stroke="white" stroke-width="2.5"/>
+                <path d="M20 12V28" stroke="white" stroke-width="2.5"/>
+                <circle cx="28" cy="12" r="3" fill="#3B82F6"/>
+            </svg>
+            <span class="brand-name">Ingredio</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hero-section">
+            <h1>Recherche de recettes</h1>
+            <p class="subtitle">Saisissez vos inventaires d'ingrédients pour générer des solutions culinaires.</p>
+        </div>
+        
+        <div class="search-panel">
+            <div class="input-group">
+                <input type="text" id="ingredientInput" placeholder="Ex: chicken, garlic, rice...">
+                <button onclick="searchRecipes()" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    Rechercher
+                </button>
+            </div>
+            <small class="helper-text">Séparez les ingrédients par une virgule (anglais recommandé pour l'API).</small>
+        </div>
+
+        <div id="results" class="results-grid"></div>
+    </main>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modalTitle">Titre Recette</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </header>
+            <div id="modalBody" class="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
